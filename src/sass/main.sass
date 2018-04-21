@@ -1,0 +1,89 @@
+@import "normalize"
+@import "mixin"
+
+$window-padding: 20px
+$header-width: 160px
+
+$frame-padding: 40px
+$line-top-margin: 15px
+$line-height: 60px
+
+$white: #FAFAFA
+
+html
+    font-family: 'Lato', sans-serif
+    background: $white
+
+h1
+    font-family: 'Nunito', sans-serif
+    font-size: 42pt
+    margin: $window-padding
+
+header, footer
+    position: fixed
+    @include rotate(-90deg)
+    bottom: 0
+    width: 0
+    >div
+        position: absolute
+        width: 100vh
+        height: 160px
+        background: $white
+
+header
+    left: 0
+    >div
+        left: 0
+        top: 0
+        img
+            position: absolute
+            right: $window-padding
+            top: $window-padding
+            height: $header-width - 2 * $window-padding
+footer
+    right: 0
+    >div
+        left: 0
+        top: - $frame-padding
+        background: $white
+
+#frame
+    height: calc(100vh - #{2 * $frame-padding + $line-height})
+    margin-top: $frame-padding
+    margin-left: $header-width
+    width: 3000 * 2px
+    img
+        height: 100%
+        display: inline-block
+    .background
+        //@include blur(15px)
+nav
+    position: fixed
+    left: $header-width
+    width: calc(100vw - #{$header-width + $frame-padding})
+    height: $line-height
+    overflow: hidden
+    border-top: 2px Solid $white
+    img
+        height: 100%
+        position: absolute
+    #index
+        height: $line-height
+        width: $line-height * 1.4
+        position: absolute
+        left: 0px
+        top: 0px
+        background: Black
+        opacity: 0.65
+        cursor: pointer
+        span
+            position: absolute
+            left: 50%
+            top: 50%
+            font-family: 'Nunito', sans-serif
+            font-size: 30px
+            margin-left: -8px
+            margin-top: -18px
+            color: $white
+            cursor: pointer
+            display: none
