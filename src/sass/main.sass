@@ -51,12 +51,20 @@ footer
     height: calc(100vh - #{2 * $frame-padding + $line-height})
     margin-top: $frame-padding
     margin-left: $header-width
-    width: 3000 * 2px
+    width: 1000000px
+    position: relative
     img
         height: 100%
         display: inline-block
     .background
-        //@include blur(15px)
+        @include blur(15px)
+    >div
+        background: #F0F0F0
+        position: absolute
+        top: 0
+        width: 101%
+        left: 0
+        height: 100%
 nav
     position: fixed
     left: $header-width
@@ -87,3 +95,7 @@ nav
             color: $white
             cursor: pointer
             display: none
+
+.anchor
+    position: absolute
+    left: 4000px

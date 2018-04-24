@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+    if (location.hash) {
+        target = window.location.hash;
+        window.scrollLeft = target;
+    }
 
     var position = 0;
 
@@ -38,6 +42,8 @@ $( document ).ready(function() {
         var windowScrollLeft = $(window).scrollLeft();
         position = windowScrollLeft / maxScroll;
         updateLine();
+
+        window.location.hash = windowScrollLeft;
     });
 
     function updateLine() {
@@ -56,5 +62,7 @@ $( document ).ready(function() {
         var lineOffset = position * maxLeftOffset;
         frame.children("img").css("left", lineOffset);
     }
+
+    scrollConverter.activate();
 });
 
